@@ -9,9 +9,8 @@ class Test extends Component {
             tag:'',
         }
     }
-
-    
     valorantAPI = require('unofficial-valorant-api');
+    
     fetchAccount(name, tag) {
         const acc = this.props.valorantAPI.getAccount(this.state.name, this.state.tag)
         return(acc)
