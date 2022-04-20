@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
+const valorantAPI = require('unofficial-valorant-api');
+
 
 class Test extends Component {
 
     constructor(props){
         super(props)
         this.state = {
-            name:'',
-            tag:'',
         }
     }
-    valorantAPI = require('unofficial-valorant-api');
-    
+
+
     fetchAccount(name, tag) {
-        const acc = this.props.valorantAPI.getAccount(this.state.name, this.state.tag)
+
+        const acc = valorantAPI.getAccount(name, tag)
         return(acc)
     }
     render(){
