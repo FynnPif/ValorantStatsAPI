@@ -11,12 +11,10 @@ class Test extends Component {
     }
 
 
-    async fetchAccount(name, tag) {
+    fetchAccount(name, tag) {
 
         const acc = valorantAPI.getAccount(name, tag)
-        acc.then(value => {
-           document.write(value.data.name);
-        })
+        return(acc)
     }
     render(){
         return(
