@@ -8,15 +8,10 @@ class Test extends Component {
     render(){
         return(
             <div>
-                <div>{this.props.name}</div>
+                <div>{this.props.accountName}</div>
             </div>
         )
     }
-
- 
-
-    
-    //Do something with the data, for an example send it as a Discord Embed into your Discord
 }
 
 
