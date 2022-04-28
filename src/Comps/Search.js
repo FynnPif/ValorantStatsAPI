@@ -16,6 +16,7 @@ class Search extends Component {
     displayAccountInfo = () =>{
         const acc = valorantAPI.getAccount(this.state.accountName, this.state.tag)
         acc.then(value => {
+            this.setState({region:value.data.region})
             this.setState({output:value.data.name})
         })
         return(console.log(acc))
