@@ -46,7 +46,6 @@ class Search extends Component {
                 <button onClick={this.displayAccountInfo}>SEARCH</button>
                 <div>
                     <output >{this.state.output}</output>
-
                 </div>
             </div>
 
