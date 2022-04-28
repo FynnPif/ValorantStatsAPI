@@ -1,5 +1,6 @@
 import { getByDisplayValue } from '@testing-library/react';
 import React, { Component } from 'react';
+import styles from './Search.module.css';
 const valorantAPI = require('unofficial-valorant-api');
 
 class Search extends Component {
@@ -30,10 +31,10 @@ class Search extends Component {
 
     render() { 
         return (
-            <div>
+            <div className={styles.search}>
             <input type="text" value = {this.state.accountName} onChange={this.handleChange}></input> 
-            <input type="text" value = {this.state.tag} onChange={this.handleChange2}></input> 
-            <button onClick={this.displayAccountInfo}>SEARCH</button>
+            <input type="text" value = {this.state.tag} onChange={this.handleChange2} className={styles.bar2}></input> 
+            <button className={styles.button_design} onClick={this.displayAccountInfo}>SEARCH</button>
             </div>
             );
     }
