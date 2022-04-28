@@ -8,12 +8,16 @@ class Search extends Component {
         this.state = {
             accountName:"",
             tag:"",
-            region:""
+            region:"",
+            output:""
         }
     }
 
     displayAccountInfo = () =>{
         const acc = valorantAPI.getAccount(this.state.accountName, this.state.tag)
+        acc.then(value => {
+            this.setState({output:value.data.name})
+        })
         return(console.log(acc))
     }
     
@@ -40,7 +44,7 @@ class Search extends Component {
             </select>
             <button onClick={this.displayAccountInfo}>SEARCH</button>
             <div>
-                <output></output>
+                <output >{this.state.output}</output>
             </div>
             </div>
 
