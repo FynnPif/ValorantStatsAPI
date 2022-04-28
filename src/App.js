@@ -16,6 +16,7 @@ class App extends Component {
   return (
     <div className="App">
      <Search/>
+      <img id='image' src='./Background.jpg'></img>
     </div>
   );
   }
