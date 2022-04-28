@@ -7,7 +7,8 @@ class Search extends Component {
         super(props)
         this.state = {
             accountName:"",
-            tag:""
+            tag:"",
+            region:""
         }
     }
 
@@ -33,8 +34,16 @@ class Search extends Component {
             <div>
             <input type="text" value = {this.state.accountName} onChange={this.handleChange}></input> 
             <input type="text" value = {this.state.tag} onChange={this.handleChange2}></input> 
+            <select name="region" id="rgn">
+                <option value="EUW">EUW</option>
+                <option value="NA">NA</option>
+            </select>
             <button onClick={this.displayAccountInfo}>SEARCH</button>
+            <div>
+                <output></output>
             </div>
+            </div>
+
             );
     }
 }
