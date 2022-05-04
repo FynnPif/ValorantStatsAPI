@@ -1,5 +1,6 @@
 import { getByDisplayValue } from '@testing-library/react';
 import React, { Component } from 'react';
+import styles from './Search.module.css';
 const valorantAPI = require('unofficial-valorant-api');
 
 class Search extends Component {

@@ -1,23 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
 import Test from './Comps/test';
-import Search from './Comps/Search';
-import React, { Component } from 'react';
+import GetMMR from './Comps/getMMR'
+function App() {
 
+  class App extends Component {
+    state = {}
 
+    render() {
 
-class App extends Component {
-  state = {  } 
-  
-  render() { 
- 
-
-
-  return (
-    <div className="App">
-     <Search/>
-    </div>
-  );
+      return (
+        <div className="App">
+          <Test />
+          <GetMMR />
+          <Search />
+          <img id='image' src='./Background.jpg'></img>
+        </div>
+      );
+    }
   }
 }
 export default App;

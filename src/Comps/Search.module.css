@@ -1,0 +1,17 @@
+.search{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  margin-left: 40%;
+  margin-top: 10px;
+  
+}
+
+.button_design{
+  background-color: aqua;
+  border-radius: 7px;
+}
+
+input{
+  background-color: brown;
+}
