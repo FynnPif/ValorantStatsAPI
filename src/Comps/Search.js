@@ -6,23 +6,28 @@ class Search extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            accountName: "",
-            tag: "",
-            region: "",
-            output: ""
+            accountName:"",
+            tag:"",
+            region:"",
+            output: []
         }
     }
 
     displayAccountInfo = () => {
         const acc = valorantAPI.getAccount(this.state.accountName, this.state.tag)
         acc.then(value => {
-            this.setState({ region: value.data.region })
-            this.setState({ output: value.data.name })
+            this.setState({region:value.data.region})
+            let output = this.state.output
+            output.push(value.data.name, value.data.tag)
+            this.setState({
+                output : output
+            })
+
         })
         return (console.log(acc))
     }
 
-
+    
     handleChange = (event) => {
         this.setState({
             accountName: event.target.value
