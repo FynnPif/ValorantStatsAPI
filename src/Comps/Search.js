@@ -9,7 +9,7 @@ class Search extends Component {
             accountName:"",
             tag:"",
             region:"",
-            output:""
+            output: []
         }
     }
 
@@ -17,12 +17,18 @@ class Search extends Component {
         const acc = valorantAPI.getAccount(this.state.accountName, this.state.tag)
         acc.then(value => {
             this.setState({region:value.data.region})
-            this.setState({output:value.data.name})
+            let output = this.state.output
+            output.push(value.data.name, value.data.tag)
+            this.setState({
+                output : output
+            })
+
         })
         return(console.log(acc))
     }
     
 
+    
     handleChange = (event) =>{
         this.setState({
             accountName : event.target.value
