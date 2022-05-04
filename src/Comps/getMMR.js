@@ -20,7 +20,7 @@ class GetMMR extends Component {
     render() {
         return(
             <div>
-                <h1>{document.write(this.fetchMMR("v1", "eu", "Henrik3", "EUW3"))}</h1>
+                <h1>{console.log(this.fetchMMR("v1", "eu", "spiege", "999"))}</h1>
             </div>
         )
     }
