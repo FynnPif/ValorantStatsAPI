@@ -1,8 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import Test from './Comps/test';
 import GetMMR from './Comps/getMMR'
-function App() {
+import Search from './Comps/Search';
+import React, { Component } from 'react';
 
   class App extends Component {
     state = {}
@@ -13,11 +13,11 @@ function App() {
         <div className="App">
           <Test />
           <GetMMR />
-          <Search />
+          <Search/>
           <img id='image' src='./Background.jpg'></img>
         </div>
       );
     }
   }
-}
+
 export default App;
