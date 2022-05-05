@@ -11,7 +11,6 @@ import React, { Component } from 'react';
 
       return (
         <div className="App">
-          <Test />
           <GetMMR />
           <Search/>
           <img id='image' src='./Background.jpg'></img>
