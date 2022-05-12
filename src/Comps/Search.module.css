@@ -1,17 +1,52 @@
+.container{
+  position: fixed;
+}
+
 .search{
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: row;
-  margin-left: 40%;
+  left: 40%;
   margin-top: 10px;
-  
+  height: 30px;
+  border-style: none;
+  padding: 0;
 }
 
 .button_design{
-  background-color: aqua;
-  border-radius: 7px;
+  background-color: rgb(73, 49, 49);
+  color:white;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+  border-style: none;
 }
 
-input{
-  background-color: brown;
+.name{
+  background-color: rgba(140, 26, 26, 0.695);
+  color: white;
+  width: 200px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-style: none;
+  
+}
+
+.tag{
+  background-color: rgba(140, 26, 26, 0.695);
+  color: white;
+  border-style: none;
+  width: 60px;
+  
+}
+
+.rgn{
+  position: fixed;
+  background-color: rgba(165, 0, 0, 0.54);
+  color: white;
+  border-radius: 15px;
+  border-style: none;
+  right: 25px;
+  margin-top: 10px;
+  height: 30px;
+
 }
