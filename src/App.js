@@ -2,8 +2,7 @@ import './App.css';
 import GetMMR from './Comps/getMMR'
 import Search from './Comps/Search';
 import React, { Component } from 'react';
-import AccountInfo from './Comps/AccountInfo';
-const valorantAPI = require('unofficial-valorant-api');
+import MatchHistory from './Comps/MatchHistory';
 
   class App extends Component {
 
@@ -23,6 +22,8 @@ const valorantAPI = require('unofficial-valorant-api');
 
       return (
         <div className="App">
+          <GetMMR />
+          <MatchHistory />
           <Search/>
           <AccountInfo />
           <img id='image' src='./Background.jpg'></img>
