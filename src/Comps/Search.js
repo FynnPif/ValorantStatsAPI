@@ -64,10 +64,13 @@ class Search extends Component {
 
     render() {
         return (
-            <div>
-                <input type="text" value={this.state.accountName} onChange={this.handleChange}></input>
-                <input type="text" value={this.state.tag} onChange={this.handleChange2}></input>
-                <select name="region" id="rgn">
+            <div className={styles.container}>
+                <div className={styles.search}>
+                    <input className={styles.name} type="text" value={this.state.accountName} onChange={this.handleChange}></input>
+                    <input className={styles.tag} type="text" value={this.state.tag} onChange={this.handleChange2}></input>
+                    <button className={styles.button_design} onClick={this.displayAccountInfo}>SEARCH</button>
+                </div>
+                <select className={styles.rgn} name="region" id="rgn">
                     <option value="EUW">EUW</option>
                     <option value="NA">NA</option>
                 </select>
