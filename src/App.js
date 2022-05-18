@@ -3,21 +3,9 @@ import GetMMR from './Comps/getMMR'
 import Search from './Comps/Search';
 import React, { Component } from 'react';
 import MatchHistory from './Comps/MatchHistory';
+import AccountInfo from './Comps/AccountInfo';
 
   class App extends Component {
-
-    constructor(props) {
-      super(props)
-      this.state = {
-          accName: this.props.accountName,
-          accTag: this.props.tag,
-          region:"",
-          output: []
-      }
-  }
-
-
-
     render() {
 
       return (
@@ -25,7 +13,7 @@ import MatchHistory from './Comps/MatchHistory';
           <GetMMR />
           <MatchHistory />
           <Search/>
-          <AccountInfo />
+          <AccountInfo/>
           <img id='image' src='./Background.jpg'></img>
         </div>
       );
