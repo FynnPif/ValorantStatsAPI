@@ -11,6 +11,7 @@ class Search extends Component {
         this.state = {
             accountName:"",
             trueAccountName:"",
+            trueTag:"",
             tag:"",
             region:"",
             output: []
@@ -31,7 +32,7 @@ class Search extends Component {
         })
     }
     getInfo = () => {
-        const acc = valorantAPI.getAccount(this.state.accountName, this.state.tag)
+        const acc = valorantAPI.getAccount(this.state.trueAccountName, this.state.trueTag)
         acc.then(value => {
             this.setState({
                 region: value.data.region,
@@ -42,10 +43,11 @@ class Search extends Component {
       }
 
     setaccountInfo = ( ) => {
-        this.getInfo();
         this.setState({
-            trueAccountName: this.state.accountName
+            trueAccountName: this.state.accountName,
+            trueTag: this.state.tag
         })
+        this.getInfo();
     }
 
     giveInfo = () => {
