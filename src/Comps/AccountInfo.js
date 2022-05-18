@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
+import Search from './Search';
 const valorantAPI = require('unofficial-valorant-api');
 
 
-class Test extends Component {
-
+class AccountInfo extends Component {
 
     render(){
         return(
             <div>
-                <div>{this.props.accountName}</div>
+                <div>{this.props.giveName}</div>
+                <div>{this.props.giveRegion}</div>
             </div>
+            
         )
     }
 }
 
 
 
-export default Test
+export default AccountInfo
