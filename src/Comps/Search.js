@@ -74,10 +74,7 @@ class Search extends Component {
                     <option value="EUW">EUW</option>
                     <option value="NA">NA</option>
                 </select>
-<<<<<<< HEAD
-=======
                 <button onClick={this.setaccountInfo}>SEARCH</button>
->>>>>>> c40d74d858cb61a0cecd95c907d2f14087dd7bbb
                 <div>
                     <AccountInfo giveName={this.giveName()} giveRegion={this.giveRegion()}></AccountInfo>
                     
