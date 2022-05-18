@@ -1,34 +1,25 @@
 import { getByDisplayValue } from '@testing-library/react';
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import styles from './Search.module.css';
+import AccountInfo from './AccountInfo';
 const valorantAPI = require('unofficial-valorant-api');
 
 class Search extends Component {
+
     constructor(props) {
         super(props)
         this.state = {
             accountName:"",
+            trueAccountName:"",
             tag:"",
             region:"",
             output: []
         }
+        
     }
 
-    displayAccountInfo = () => {
-        const acc = valorantAPI.getAccount(this.state.accountName, this.state.tag)
-        acc.then(value => {
-            this.setState({region:value.data.region})
-            let output = this.state.output
-            output.push(value.data.name, value.data.tag)
-            this.setState({
-                output : output
-            })
 
-        })
-        return (console.log(acc))
-    }
 
-    
     handleChange = (event) => {
         this.setState({
             accountName: event.target.value
@@ -39,6 +30,37 @@ class Search extends Component {
             tag: event.target.value
         })
     }
+    getInfo = () => {
+        const acc = valorantAPI.getAccount(this.state.accountName, this.state.tag)
+        acc.then(value => {
+            this.setState({
+                region: value.data.region,
+                
+            })
+        })
+        return (console.log(acc))
+      }
+
+    setaccountInfo = ( ) => {
+        this.getInfo();
+        this.setState({
+            trueAccountName: this.state.accountName
+        })
+    }
+
+    giveInfo = () => {
+        const [accName, setName ] = useState('')
+        setName( accName = this.state.accountName)
+    }
+
+    giveName = () =>{
+        return this.state.trueAccountName
+    }
+
+    giveRegion = () => {
+        return this.state.region
+    }
+
 
     render() {
         return (
@@ -52,8 +74,15 @@ class Search extends Component {
                     <option value="EUW">EUW</option>
                     <option value="NA">NA</option>
                 </select>
+<<<<<<< HEAD
+=======
+                <button onClick={this.setaccountInfo}>SEARCH</button>
+>>>>>>> c40d74d858cb61a0cecd95c907d2f14087dd7bbb
                 <div>
-                    <output >{this.state.output}</output>
+                    <AccountInfo giveName={this.giveName()} giveRegion={this.giveRegion()}></AccountInfo>
+                    
+                    <output >
+                    </output>
                 </div>
             </div>
 
