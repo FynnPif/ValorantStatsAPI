@@ -16,7 +16,6 @@ import AccountInfo from './Comps/AccountInfo';
           <MatchHistory />
           <Search/>
           <AccountInfo/>
-          <img id='image' src='./Background.jpg'></img>
         </div>
       );
     }

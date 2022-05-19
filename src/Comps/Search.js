@@ -68,13 +68,13 @@ class Search extends Component {
                 <div className={styles.search}>
                     <input className={styles.name} type="text" value={this.state.accountName} onChange={this.handleChange}></input>
                     <input className={styles.tag} type="text" value={this.state.tag} onChange={this.handleChange2}></input>
-                    <button className={styles.button_design} onClick={this.displayAccountInfo}>SEARCH</button>
+                    <button className={styles.button_design} onClick={this.setaccountInfo}>SEARCH</button>
                 </div>
                 <select className={styles.rgn} name="region" id="rgn">
                     <option value="EUW">EUW</option>
                     <option value="NA">NA</option>
                 </select>
-                <button onClick={this.setaccountInfo}>SEARCH</button>
+                
                 <div>
                     <AccountInfo giveName={this.giveName()} giveRegion={this.giveRegion()}></AccountInfo>
                     
