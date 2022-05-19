@@ -13,13 +13,12 @@ class Search extends Component {
             trueAccountName:"",
             trueTag:"",
             tag:"",
+            lvl:"",
+            pic:"",
             region:"",
-            output: []
         }
         
     }
-
-
 
     handleChange = (event) => {
         this.setState({
@@ -32,21 +31,20 @@ class Search extends Component {
         })
     }
     getInfo = () => {
-        const acc = valorantAPI.getAccount(this.state.trueAccountName, this.state.trueTag)
+        const acc = valorantAPI.getAccount(this.state.accountName, this.state.tag)
         acc.then(value => {
             this.setState({
                 region: value.data.region,
-                
+                lvl: value.data.account_level,
+                trueAccountName: value.data.name,
+                trueTag: value.data.tag,
+                pic: value.data.card.small
             })
         })
         return (console.log(acc))
       }
 
-    setaccountInfo = ( ) => {
-        this.setState({
-            trueAccountName: this.state.accountName,
-            trueTag: this.state.tag
-        })
+    setAccountInfo = ( ) => {
         this.getInfo();
     }
 
@@ -63,6 +61,13 @@ class Search extends Component {
         return this.state.region
     }
 
+    giveLevel = () => {
+        return this.state.lvl
+    }
+
+    givePic = () => {
+        return this.state.pic
+    }
 
     render() {
         return (
@@ -70,16 +75,15 @@ class Search extends Component {
                 <div className={styles.search}>
                     <input className={styles.name} type="text" value={this.state.accountName} onChange={this.handleChange}></input>
                     <input className={styles.tag} type="text" value={this.state.tag} onChange={this.handleChange2}></input>
-                    <button className={styles.button_design} onClick={this.displayAccountInfo}>SEARCH</button>
+                    <button className={styles.button_design} onClick={this.setAccountInfo}>SEARCH</button>
                 </div>
                 <select className={styles.rgn} name="region" id="rgn">
                     <option value="EUW">EUW</option>
                     <option value="NA">NA</option>
                 </select>
-                <button onClick={this.setaccountInfo}>SEARCH</button>
                 <div>
-                    <AccountInfo giveName={this.giveName()} giveRegion={this.giveRegion()}></AccountInfo>
-                    
+                    <AccountInfo giveName={this.giveName()} giveRegion={this.giveRegion()} giveLevel={this.giveLevel()} givePic={this.givePic()}></AccountInfo>
+            
                     <output >
                     </output>
                 </div>
