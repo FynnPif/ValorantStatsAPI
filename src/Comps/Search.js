@@ -44,13 +44,8 @@ class Search extends Component {
         return (console.log(acc))
       }
 
-    setAccountInfo = ( ) => {
+    setAccountInfo = () => {
         this.getInfo();
-    }
-
-    giveInfo = () => {
-        const [accName, setName ] = useState('')
-        setName( accName = this.state.accountName)
     }
 
     giveName = () =>{
@@ -66,8 +61,21 @@ class Search extends Component {
     }
 
     givePic = () => {
+        this.fetchMatches();
         return this.state.pic
     }
+
+
+    fetchMatches = () => {
+        const matches = valorantAPI.getMatches(this.state.region, this.state.accountName, this.state.tag)
+        for (let i=0;i<=5;i++){
+            matches.then(element => {
+            console.log(element.data[i].metadata.map)
+        });
+    }
+}
+
+
 
     render() {
         return (

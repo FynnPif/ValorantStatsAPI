@@ -12,7 +12,6 @@ import AccountInfo from './Comps/AccountInfo';
       return (
         <div className="App">
           <Betweenpic/>
-          <GetMMR />
           <MatchHistory />
           <Search/>
           <AccountInfo/>

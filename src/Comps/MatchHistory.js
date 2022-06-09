@@ -11,16 +11,18 @@ class GetMatches extends Component {
 
     async fetchMatches (region, name, tag, size, mode, map) {
         const matches = ValorantAPI.getMatches(region, name, tag, size, mode, map)
-        matches.then(value => {
-            console.log(value.data);
-         })
+        for (let i=0;i<=5;i++){
+            matches.then(element => {
+            console.log(element.data[i].metadata.map)
+        });
+    }
     }
     
     
     render() {
         return(
             <div>
-                <h1>{console.log(this.fetchMatches("eu", "spiege", "999", "3", "deathmatch", "haven"))}</h1>
+                <h1>{console.log(this.fetchMatches("eu", "spiege", "999"))}</h1>
             </div>
         )
     }
